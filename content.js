@@ -168,6 +168,16 @@ if (!('webkitSpeechRecognition' in window)) {
       var video = document.getElementsByTagName('video')[0];
       video.pause();
     }
+    if (interim_transcript == 'louder') {
+      console.log('We are going to go loud');
+      var video = document.getElementsByTagName('video')[0];
+      video.volume = video.volume + 0.25;
+    }
+    if (interim_transcript == 'softer') {
+      console.log('We are going to go soft');
+      var video = document.getElementsByTagName('video')[0];
+      video.volume = video.volume - 0.25;
+    }
   };
 }
 

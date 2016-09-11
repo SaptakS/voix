@@ -1,6 +1,6 @@
 {
-  "name": "Page Redder",
-  "description": "Make the current page red",
+  "name": "Voix",
+  "description": "",
   "version": "2.0",
   "permissions": ["contextMenus", "tabs", "activeTab", "storage",
     "http://*/*", "https://*/*"
