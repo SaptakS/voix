@@ -8,7 +8,10 @@ chrome.tabs.onUpdated.addListener(
     window.onload = function(tabId, changeInfo, tab) {
       console.log('Turning ' + tab.url + ' red!');
       chrome.tabs.executeScript({
-        code: 'document.body.style.backgroundColor="red"'
+        file: 'jquery-1.11.3.js'
+      });
+      chrome.tabs.executeScript({
+        file: 'content.js'
       });
 });
 
@@ -16,7 +19,10 @@ chrome.tabs.onActivated.addListener(
     window.onload = function(activeInfo, tab) {
       console.log('Turning ' + tab.url + ' red!');
       chrome.tabs.executeScript({
-        code: 'document.body.style.backgroundColor="red"'
+        file: 'jquery-1.11.3.js'
+      });
+      chrome.tabs.executeScript({
+        file: 'content.js'
       });
 });
 
@@ -24,7 +30,10 @@ chrome.windows.onFocusChanged.addListener(
     window.onload = function(windowId, tab) {
       console.log('Turning ' + tab.url + ' red!');
       chrome.tabs.executeScript({
-        code: 'document.body.style.backgroundColor="red"'
+        file: 'jquery-1.11.3.js'
+      });
+      chrome.tabs.executeScript({
+        file: 'content.js'
       });
 });
 
@@ -32,6 +41,9 @@ chrome.tabs.onCreated.addListener(
     window.onload = function(tabId, tab) {
       console.log('Turning ' + tab.url + ' red!');
       chrome.tabs.executeScript({
-        code: 'document.body.style.backgroundColor="red"'
+        file: 'jquery-1.11.3.js'
+      });
+      chrome.tabs.executeScript({
+        file: 'content.js'
       });
 });
