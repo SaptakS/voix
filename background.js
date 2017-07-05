@@ -6,7 +6,6 @@
   // No tabs or host permissions needed!
 chrome.tabs.onUpdated.addListener(
     window.onload = function(tabId, changeInfo, tab) {
-      console.log('Turning ' + tab.url + ' red!');
       chrome.tabs.executeScript({
         file: 'jquery-1.11.3.js'
       });
@@ -17,7 +16,6 @@ chrome.tabs.onUpdated.addListener(
 
 chrome.tabs.onActivated.addListener(
     window.onload = function(activeInfo, tab) {
-      console.log('Turning ' + tab.url + ' red!');
       chrome.tabs.executeScript({
         file: 'jquery-1.11.3.js'
       });
@@ -28,7 +26,6 @@ chrome.tabs.onActivated.addListener(
 
 chrome.windows.onFocusChanged.addListener(
     window.onload = function(windowId, tab) {
-      console.log('Turning ' + tab.url + ' red!');
       chrome.tabs.executeScript({
         file: 'jquery-1.11.3.js'
       });
@@ -39,7 +36,6 @@ chrome.windows.onFocusChanged.addListener(
 
 chrome.tabs.onCreated.addListener(
     window.onload = function(tabId, tab) {
-      console.log('Turning ' + tab.url + ' red!');
       chrome.tabs.executeScript({
         file: 'jquery-1.11.3.js'
       });

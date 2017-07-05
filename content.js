@@ -168,15 +168,65 @@ if (!('webkitSpeechRecognition' in window)) {
       var video = document.getElementsByTagName('video')[0];
       video.pause();
     }
-    if (interim_transcript == 'louder') {
+    if (interim_transcript == 'loud') {
       console.log('We are going to go loud');
       var video = document.getElementsByTagName('video')[0];
       video.volume = video.volume + 0.25;
     }
-    if (interim_transcript == 'softer') {
+    if (interim_transcript == 'soft') {
       console.log('We are going to go soft');
       var video = document.getElementsByTagName('video')[0];
       video.volume = video.volume - 0.25;
+    }
+    if (interim_transcript == 'next') {
+      console.log('We are going to play next song');
+      var next = document.getElementsByClassName('ytp-next-button ytp-button')[0]; 
+      next.click();
+    } 
+    if (interim_transcript == 'fullscreen') {
+      console.log('We are going fullscreen');
+      var fullscreen = document.getElementsByClassName('ytp-fullscreen-button ytp-button')[0]; 
+      fullscreen.click();
+    } 
+   if (interim_transcript == 'subtitles') {
+      console.log('We are showing subtitles');
+      var sub = document.getElementsByClassName('ytp-subtitles-button ytp-button')[0]; 
+      sub.click();
+    } 
+   if (interim_transcript == 'like') {
+      console.log('We are liking page');
+      var like = document.getElementsByClassName('yt-uix-button yt-uix-button-size-default yt-uix-button-opacity yt-uix-button-has-icon no-icon-markup like-button-renderer-like-button like-button-renderer-like-button-unclicked  yt-uix-post-anchor yt-uix-tooltip')[0]; 
+      like.click();
+    }
+   if (interim_transcript == 'dislike') {
+      console.log('We are disliking page');
+      var dislike = document.getElementsByClassName('yt-uix-button yt-uix-button-size-default yt-uix-button-opacity yt-uix-button-has-icon no-icon-markup like-button-renderer-dislike-button like-button-renderer-dislike-button-unclicked  yt-uix-post-anchor yt-uix-tooltip')[0]; 
+      dislike.click();
+    }
+	  if (interim_transcript == 'subscribe') {
+      console.log('We are disliking page');
+      var sub = document.getElementsByClassName('yt-uix-button yt-uix-button-size-default yt-uix-button-subscribe-branded yt-uix-button-has-icon no-icon-markup yt-uix-subscription-button yt-can-buffer')[0]; 
+      sub.click();
+    }
+   if (interim_transcript == 'theater') {
+      console.log('We are show theater mode');
+      var view = document.getElementsByClassName('ytp-size-button ytp-button')[0]; 
+      view.click();
+    }
+	
+    	
+	var str=interim_transcript;
+	var str1 = str.split(" ");
+	for (var i=0;i<str1.length;i++)
+ 	{
+     		var words = str1[i].split(" ");
+     		var so = (words[0]);
+ 	}
+	if(so == "search")
+	{
+		var result = str.replace(/^search\s/i, " ");
+      console.log("We are going to search");
+	document.getElementById('masthead-search-term').value=result;
     }
   };
 }
