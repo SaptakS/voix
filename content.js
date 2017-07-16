@@ -214,20 +214,24 @@ if (!('webkitSpeechRecognition' in window)) {
       view.click();
     }
 	
-    	
 	var str=interim_transcript;
-	var str1 = str.split(" ");
-	for (var i=0;i<str1.length;i++)
+var str1 = str.split(" ");
+for (var i=0;i<str1.length;i++)
  	{
-     		var words = str1[i].split(" ");
-     		var so = (words[0]);
+     	var firstWord = str1[i].split(' ')[0];
+    	if(firstWord == "search")
+    		var neww = firstWord;
  	}
-	if(so == "search")
+ 	console.log(neww);
+if(neww == "search")
 	{
-		var result = str.replace(/^search\s/i, " ");
-      console.log("We are going to search");
+	var result = str.split(' ').slice(1).join(' ')
+	console.log(result);
+	console.log('we will search');
 	document.getElementById('masthead-search-term').value=result;
-    }
+	var search_button = document.getElementById('search-btn');
+	search_button.click();
+    	}
   };
 }
 
