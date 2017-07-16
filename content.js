@@ -203,7 +203,7 @@ if (!('webkitSpeechRecognition' in window)) {
       var dislike = document.getElementsByClassName('yt-uix-button yt-uix-button-size-default yt-uix-button-opacity yt-uix-button-has-icon no-icon-markup like-button-renderer-dislike-button like-button-renderer-dislike-button-unclicked  yt-uix-post-anchor yt-uix-tooltip')[0]; 
       dislike.click();
     }
-	  if (interim_transcript == 'subscribe') {
+   if (interim_transcript == 'subscribe') {
       console.log('We are disliking page');
       var sub = document.getElementsByClassName('yt-uix-button yt-uix-button-size-default yt-uix-button-subscribe-branded yt-uix-button-has-icon no-icon-markup yt-uix-subscription-button yt-can-buffer')[0]; 
       sub.click();
@@ -213,25 +213,25 @@ if (!('webkitSpeechRecognition' in window)) {
       var view = document.getElementsByClassName('ytp-size-button ytp-button')[0]; 
       view.click();
     }
-	
-	var str=interim_transcript;
-var str1 = str.split(" ");
-for (var i=0;i<str1.length;i++)
- 	{
+
+   var str=interim_transcript;
+   var str1 = str.split(" ");
+   for (var i=0;i<str1.length;i++)
+    {
      	var firstWord = str1[i].split(' ')[0];
     	if(firstWord == "search")
-    		var neww = firstWord;
- 	}
- 	console.log(neww);
-if(neww == "search")
-	{
+    	var neww = firstWord;
+    }
+ 	//console.log(neww);
+    if(neww == "search")
+    {
 	var result = str.split(' ').slice(1).join(' ')
-	console.log(result);
+	//console.log(result);
 	console.log('we will search');
 	document.getElementById('masthead-search-term').value=result;
 	var search_button = document.getElementById('search-btn');
 	search_button.click();
-    	}
+    }
   };
 }
 
